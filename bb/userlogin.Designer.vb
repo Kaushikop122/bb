@@ -27,18 +27,16 @@ Partial Class userlogin
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.cmbuserid = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.btnRegister = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(61, 115)
+        Me.Label1.Location = New System.Drawing.Point(480, 265)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 32)
         Me.Label1.TabIndex = 0
@@ -48,7 +46,7 @@ Partial Class userlogin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(61, 202)
+        Me.Label2.Location = New System.Drawing.Point(480, 352)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(145, 32)
         Me.Label2.TabIndex = 1
@@ -56,49 +54,31 @@ Partial Class userlogin
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(233, 125)
+        Me.txtEmail.Location = New System.Drawing.Point(652, 275)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(222, 22)
         Me.txtEmail.TabIndex = 2
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(233, 212)
+        Me.txtPassword.Location = New System.Drawing.Point(652, 362)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(222, 22)
         Me.txtPassword.TabIndex = 3
         '
         'btnLogin
         '
-        Me.btnLogin.Location = New System.Drawing.Point(67, 314)
+        Me.btnLogin.Location = New System.Drawing.Point(486, 464)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(168, 40)
         Me.btnLogin.TabIndex = 4
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
-        'cmbuserid
-        '
-        Me.cmbuserid.FormattingEnabled = True
-        Me.cmbuserid.Location = New System.Drawing.Point(233, 48)
-        Me.cmbuserid.Name = "cmbuserid"
-        Me.cmbuserid.Size = New System.Drawing.Size(222, 24)
-        Me.cmbuserid.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(62, 41)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 29)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "User ID"
-        '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(230, 434)
+        Me.LinkLabel1.Location = New System.Drawing.Point(649, 584)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(81, 16)
         Me.LinkLabel1.TabIndex = 7
@@ -107,32 +87,31 @@ Partial Class userlogin
         '
         'btnRegister
         '
-        Me.btnRegister.Location = New System.Drawing.Point(297, 314)
+        Me.btnRegister.Location = New System.Drawing.Point(716, 464)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(168, 40)
         Me.btnRegister.TabIndex = 8
         Me.btnRegister.Text = "Signup"
         Me.btnRegister.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Label3
         '
-        Me.Button1.Location = New System.Drawing.Point(564, 41)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 39)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Get User ID"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Symbol", 25.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(649, 85)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(139, 60)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Login"
         '
         'userlogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1321, 575)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1480, 763)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnRegister)
         Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.cmbuserid)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtEmail)
@@ -150,9 +129,7 @@ Partial Class userlogin
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnLogin As Button
-    Friend WithEvents cmbuserid As ComboBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents btnRegister As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
 End Class

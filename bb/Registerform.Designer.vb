@@ -41,7 +41,7 @@ Partial Class Registerform
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(40, 124)
+        Me.Label1.Location = New System.Drawing.Point(462, 236)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 29)
         Me.Label1.TabIndex = 0
@@ -51,7 +51,7 @@ Partial Class Registerform
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(40, 294)
+        Me.Label2.Location = New System.Drawing.Point(462, 406)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(124, 29)
         Me.Label2.TabIndex = 1
@@ -61,7 +61,7 @@ Partial Class Registerform
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(44, 356)
+        Me.Label3.Location = New System.Drawing.Point(466, 468)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(120, 29)
         Me.Label3.TabIndex = 2
@@ -71,7 +71,7 @@ Partial Class Registerform
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(40, 175)
+        Me.Label4.Location = New System.Drawing.Point(462, 287)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(94, 29)
         Me.Label4.TabIndex = 3
@@ -81,7 +81,7 @@ Partial Class Registerform
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(40, 229)
+        Me.Label5.Location = New System.Drawing.Point(462, 341)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(74, 29)
         Me.Label5.TabIndex = 4
@@ -89,42 +89,42 @@ Partial Class Registerform
         '
         'Nametxt
         '
-        Me.Nametxt.Location = New System.Drawing.Point(316, 124)
+        Me.Nametxt.Location = New System.Drawing.Point(738, 236)
         Me.Nametxt.Name = "Nametxt"
         Me.Nametxt.Size = New System.Drawing.Size(205, 22)
         Me.Nametxt.TabIndex = 5
         '
         'Contacttxt
         '
-        Me.Contacttxt.Location = New System.Drawing.Point(316, 175)
+        Me.Contacttxt.Location = New System.Drawing.Point(738, 287)
         Me.Contacttxt.Name = "Contacttxt"
         Me.Contacttxt.Size = New System.Drawing.Size(205, 22)
         Me.Contacttxt.TabIndex = 6
         '
         'Emailtxt
         '
-        Me.Emailtxt.Location = New System.Drawing.Point(316, 229)
+        Me.Emailtxt.Location = New System.Drawing.Point(738, 341)
         Me.Emailtxt.Name = "Emailtxt"
         Me.Emailtxt.Size = New System.Drawing.Size(205, 22)
         Me.Emailtxt.TabIndex = 7
         '
         'Passwordtxt
         '
-        Me.Passwordtxt.Location = New System.Drawing.Point(319, 356)
+        Me.Passwordtxt.Location = New System.Drawing.Point(741, 468)
         Me.Passwordtxt.Name = "Passwordtxt"
         Me.Passwordtxt.Size = New System.Drawing.Size(205, 22)
         Me.Passwordtxt.TabIndex = 8
         '
         'Usernametxt
         '
-        Me.Usernametxt.Location = New System.Drawing.Point(319, 294)
+        Me.Usernametxt.Location = New System.Drawing.Point(741, 406)
         Me.Usernametxt.Name = "Usernametxt"
         Me.Usernametxt.Size = New System.Drawing.Size(205, 22)
         Me.Usernametxt.TabIndex = 9
         '
         'BtnRegister
         '
-        Me.BtnRegister.Location = New System.Drawing.Point(45, 457)
+        Me.BtnRegister.Location = New System.Drawing.Point(467, 569)
         Me.BtnRegister.Name = "BtnRegister"
         Me.BtnRegister.Size = New System.Drawing.Size(192, 54)
         Me.BtnRegister.TabIndex = 10
@@ -133,7 +133,7 @@ Partial Class Registerform
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(316, 460)
+        Me.Button2.Location = New System.Drawing.Point(738, 572)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(192, 49)
         Me.Button2.TabIndex = 11
@@ -143,10 +143,10 @@ Partial Class Registerform
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(175, 38)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Black", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(618, 90)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(165, 32)
+        Me.Label6.Size = New System.Drawing.Size(212, 54)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "REGISTER"
         '
@@ -154,7 +154,7 @@ Partial Class Registerform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1218, 605)
+        Me.ClientSize = New System.Drawing.Size(1477, 823)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.BtnRegister)

@@ -44,7 +44,7 @@ Partial Class Savingplan
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(147, 42)
+        Me.Label1.Location = New System.Drawing.Point(576, 125)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(247, 38)
         Me.Label1.TabIndex = 0
@@ -54,7 +54,7 @@ Partial Class Savingplan
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(51, 134)
+        Me.Label2.Location = New System.Drawing.Point(428, 226)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 29)
         Me.Label2.TabIndex = 1
@@ -64,7 +64,7 @@ Partial Class Savingplan
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(48, 187)
+        Me.Label3.Location = New System.Drawing.Point(433, 286)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(107, 29)
         Me.Label3.TabIndex = 2
@@ -74,7 +74,7 @@ Partial Class Savingplan
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(48, 249)
+        Me.Label4.Location = New System.Drawing.Point(430, 341)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(175, 29)
         Me.Label4.TabIndex = 3
@@ -84,7 +84,7 @@ Partial Class Savingplan
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(51, 311)
+        Me.Label5.Location = New System.Drawing.Point(433, 403)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(197, 29)
         Me.Label5.TabIndex = 4
@@ -92,21 +92,21 @@ Partial Class Savingplan
         '
         'txtIncome
         '
-        Me.txtIncome.Location = New System.Drawing.Point(402, 134)
+        Me.txtIncome.Location = New System.Drawing.Point(784, 226)
         Me.txtIncome.Name = "txtIncome"
         Me.txtIncome.Size = New System.Drawing.Size(174, 22)
         Me.txtIncome.TabIndex = 5
         '
         'txtExpenses
         '
-        Me.txtExpenses.Location = New System.Drawing.Point(402, 194)
+        Me.txtExpenses.Location = New System.Drawing.Point(784, 286)
         Me.txtExpenses.Name = "txtExpenses"
         Me.txtExpenses.Size = New System.Drawing.Size(174, 22)
         Me.txtExpenses.TabIndex = 6
         '
         'txtTargetSavings
         '
-        Me.txtTargetSavings.Location = New System.Drawing.Point(402, 256)
+        Me.txtTargetSavings.Location = New System.Drawing.Point(784, 348)
         Me.txtTargetSavings.Name = "txtTargetSavings"
         Me.txtTargetSavings.Size = New System.Drawing.Size(174, 22)
         Me.txtTargetSavings.TabIndex = 7
@@ -115,7 +115,7 @@ Partial Class Savingplan
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(46, 466)
+        Me.Label6.Location = New System.Drawing.Point(428, 558)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(302, 29)
         Me.Label6.TabIndex = 8
@@ -123,14 +123,14 @@ Partial Class Savingplan
         '
         'txtSavingsPerMonth
         '
-        Me.txtSavingsPerMonth.Location = New System.Drawing.Point(354, 473)
+        Me.txtSavingsPerMonth.Location = New System.Drawing.Point(736, 565)
         Me.txtSavingsPerMonth.Name = "txtSavingsPerMonth"
         Me.txtSavingsPerMonth.Size = New System.Drawing.Size(213, 22)
         Me.txtSavingsPerMonth.TabIndex = 9
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(51, 371)
+        Me.btnClear.Location = New System.Drawing.Point(433, 463)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(140, 55)
         Me.btnClear.TabIndex = 10
@@ -139,7 +139,7 @@ Partial Class Savingplan
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(436, 380)
+        Me.btnCalculate.Location = New System.Drawing.Point(818, 472)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(140, 55)
         Me.btnCalculate.TabIndex = 11
@@ -148,7 +148,7 @@ Partial Class Savingplan
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(56, 532)
+        Me.btnSave.Location = New System.Drawing.Point(438, 624)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(148, 46)
         Me.btnSave.TabIndex = 12
@@ -157,7 +157,7 @@ Partial Class Savingplan
         '
         'btnexport
         '
-        Me.btnexport.Location = New System.Drawing.Point(428, 532)
+        Me.btnexport.Location = New System.Drawing.Point(810, 624)
         Me.btnexport.Name = "btnexport"
         Me.btnexport.Size = New System.Drawing.Size(148, 46)
         Me.btnexport.TabIndex = 13
@@ -167,7 +167,7 @@ Partial Class Savingplan
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.IndianRed
-        Me.btnBack.Location = New System.Drawing.Point(637, 42)
+        Me.btnBack.Location = New System.Drawing.Point(35, 42)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 14
@@ -177,7 +177,7 @@ Partial Class Savingplan
         'cmbmonths
         '
         Me.cmbmonths.FormattingEnabled = True
-        Me.cmbmonths.Location = New System.Drawing.Point(402, 318)
+        Me.cmbmonths.Location = New System.Drawing.Point(784, 410)
         Me.cmbmonths.Name = "cmbmonths"
         Me.cmbmonths.Size = New System.Drawing.Size(174, 24)
         Me.cmbmonths.TabIndex = 15
@@ -186,7 +186,7 @@ Partial Class Savingplan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1126, 669)
+        Me.ClientSize = New System.Drawing.Size(1479, 814)
         Me.Controls.Add(Me.cmbmonths)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnexport)

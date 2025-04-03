@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EmergencyFundForm
+Partial Class EmergencyFund
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,9 +26,9 @@ Partial Class EmergencyFundForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtExpenses = New System.Windows.Forms.TextBox()
-        Me.txtEmergencyFund = New System.Windows.Forms.TextBox()
-        Me.cmbMonths = New System.Windows.Forms.ComboBox()
+        Me.txtMonthlyExpenses = New System.Windows.Forms.TextBox()
+        Me.txtTotalFund = New System.Windows.Forms.TextBox()
+        Me.cmbMonthstosave = New System.Windows.Forms.ComboBox()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnCalculate = New System.Windows.Forms.Button()
@@ -41,7 +41,7 @@ Partial Class EmergencyFundForm
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Font = New System.Drawing.Font("Sylfaen", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 68)
+        Me.Label2.Location = New System.Drawing.Point(566, 136)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(292, 43)
         Me.Label2.TabIndex = 2
@@ -52,7 +52,7 @@ Partial Class EmergencyFundForm
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.SystemColors.Menu
         Me.Label3.Font = New System.Drawing.Font("Sylfaen", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 191)
+        Me.Label3.Location = New System.Drawing.Point(327, 258)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(185, 29)
         Me.Label3.TabIndex = 3
@@ -62,7 +62,7 @@ Partial Class EmergencyFundForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Sylfaen", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 264)
+        Me.Label4.Location = New System.Drawing.Point(327, 331)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(498, 29)
         Me.Label4.TabIndex = 4
@@ -72,42 +72,42 @@ Partial Class EmergencyFundForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Sylfaen", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(64, 429)
+        Me.Label5.Location = New System.Drawing.Point(379, 496)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(614, 29)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Amount to save every month to achive emergency fund goal "
         '
-        'txtExpenses
+        'txtMonthlyExpenses
         '
-        Me.txtExpenses.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtExpenses.Location = New System.Drawing.Point(604, 192)
-        Me.txtExpenses.Name = "txtExpenses"
-        Me.txtExpenses.Size = New System.Drawing.Size(206, 31)
-        Me.txtExpenses.TabIndex = 6
+        Me.txtMonthlyExpenses.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMonthlyExpenses.Location = New System.Drawing.Point(919, 259)
+        Me.txtMonthlyExpenses.Name = "txtMonthlyExpenses"
+        Me.txtMonthlyExpenses.Size = New System.Drawing.Size(206, 31)
+        Me.txtMonthlyExpenses.TabIndex = 6
         '
-        'txtEmergencyFund
+        'txtTotalFund
         '
-        Me.txtEmergencyFund.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmergencyFund.Location = New System.Drawing.Point(242, 487)
-        Me.txtEmergencyFund.Name = "txtEmergencyFund"
-        Me.txtEmergencyFund.Size = New System.Drawing.Size(323, 31)
-        Me.txtEmergencyFund.TabIndex = 8
+        Me.txtTotalFund.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalFund.Location = New System.Drawing.Point(557, 554)
+        Me.txtTotalFund.Name = "txtTotalFund"
+        Me.txtTotalFund.Size = New System.Drawing.Size(323, 31)
+        Me.txtTotalFund.TabIndex = 8
         '
-        'cmbMonths
+        'cmbMonthstosave
         '
-        Me.cmbMonths.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbMonths.FormattingEnabled = True
-        Me.cmbMonths.Location = New System.Drawing.Point(604, 265)
-        Me.cmbMonths.Name = "cmbMonths"
-        Me.cmbMonths.Size = New System.Drawing.Size(206, 31)
-        Me.cmbMonths.TabIndex = 9
+        Me.cmbMonthstosave.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbMonthstosave.FormattingEnabled = True
+        Me.cmbMonthstosave.Location = New System.Drawing.Point(919, 332)
+        Me.cmbMonthstosave.Name = "cmbMonthstosave"
+        Me.cmbMonthstosave.Size = New System.Drawing.Size(206, 31)
+        Me.cmbMonthstosave.TabIndex = 9
         '
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.IndianRed
         Me.btnBack.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.Location = New System.Drawing.Point(735, 80)
+        Me.btnBack.Location = New System.Drawing.Point(90, 60)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 31)
         Me.btnBack.TabIndex = 10
@@ -116,7 +116,7 @@ Partial Class EmergencyFundForm
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(17, 341)
+        Me.btnReset.Location = New System.Drawing.Point(332, 408)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(185, 49)
         Me.btnReset.TabIndex = 11
@@ -125,7 +125,7 @@ Partial Class EmergencyFundForm
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(625, 341)
+        Me.btnCalculate.Location = New System.Drawing.Point(940, 408)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(185, 49)
         Me.btnCalculate.TabIndex = 12
@@ -134,7 +134,7 @@ Partial Class EmergencyFundForm
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(17, 564)
+        Me.btnSave.Location = New System.Drawing.Point(332, 631)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(185, 57)
         Me.btnSave.TabIndex = 13
@@ -143,33 +143,33 @@ Partial Class EmergencyFundForm
         '
         'btnExport
         '
-        Me.btnExport.Location = New System.Drawing.Point(625, 564)
+        Me.btnExport.Location = New System.Drawing.Point(940, 631)
         Me.btnExport.Name = "btnExport"
         Me.btnExport.Size = New System.Drawing.Size(185, 57)
         Me.btnExport.TabIndex = 14
         Me.btnExport.Text = "Export"
         Me.btnExport.UseVisualStyleBackColor = True
         '
-        'EmergencyFundForm
+        'EmergencyFund
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1408, 724)
+        Me.ClientSize = New System.Drawing.Size(1484, 804)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.cmbMonths)
-        Me.Controls.Add(Me.txtEmergencyFund)
-        Me.Controls.Add(Me.txtExpenses)
+        Me.Controls.Add(Me.cmbMonthstosave)
+        Me.Controls.Add(Me.txtTotalFund)
+        Me.Controls.Add(Me.txtMonthlyExpenses)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.DoubleBuffered = True
-        Me.Name = "EmergencyFundForm"
+        Me.Name = "EmergencyFund"
         Me.Text = "Emergencyfund"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -179,9 +179,9 @@ Partial Class EmergencyFundForm
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtExpenses As TextBox
-    Friend WithEvents txtEmergencyFund As TextBox
-    Friend WithEvents cmbMonths As ComboBox
+    Friend WithEvents txtMonthlyExpenses As TextBox
+    Friend WithEvents txtTotalFund As TextBox
+    Friend WithEvents cmbMonthstosave As ComboBox
     Friend WithEvents btnBack As Button
     Friend WithEvents btnReset As Button
     Friend WithEvents btnCalculate As Button

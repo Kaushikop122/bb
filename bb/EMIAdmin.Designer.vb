@@ -35,7 +35,7 @@ Partial Class EMIAdmin
         '
         Me.loantenture.AutoSize = True
         Me.loantenture.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.loantenture.Location = New System.Drawing.Point(258, 492)
+        Me.loantenture.Location = New System.Drawing.Point(356, 559)
         Me.loantenture.Name = "loantenture"
         Me.loantenture.Size = New System.Drawing.Size(279, 32)
         Me.loantenture.TabIndex = 0
@@ -43,24 +43,24 @@ Partial Class EMIAdmin
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(318, 583)
+        Me.btnUpdate.Location = New System.Drawing.Point(381, 650)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(527, 43)
+        Me.btnUpdate.Size = New System.Drawing.Size(736, 43)
         Me.btnUpdate.TabIndex = 3
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'txtInterestRate
         '
-        Me.txtInterestRate.Location = New System.Drawing.Point(595, 502)
+        Me.txtInterestRate.Location = New System.Drawing.Point(658, 569)
         Me.txtInterestRate.Name = "txtInterestRate"
-        Me.txtInterestRate.Size = New System.Drawing.Size(324, 22)
+        Me.txtInterestRate.Size = New System.Drawing.Size(533, 22)
         Me.txtInterestRate.TabIndex = 6
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(619, 227)
+        Me.Label3.Location = New System.Drawing.Point(891, 294)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(0, 16)
         Me.Label3.TabIndex = 8
@@ -68,11 +68,11 @@ Partial Class EMIAdmin
         'dgvEMIRates
         '
         Me.dgvEMIRates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEMIRates.Location = New System.Drawing.Point(161, 57)
+        Me.dgvEMIRates.Location = New System.Drawing.Point(224, 124)
         Me.dgvEMIRates.Name = "dgvEMIRates"
         Me.dgvEMIRates.RowHeadersWidth = 51
         Me.dgvEMIRates.RowTemplate.Height = 24
-        Me.dgvEMIRates.Size = New System.Drawing.Size(851, 375)
+        Me.dgvEMIRates.Size = New System.Drawing.Size(1060, 375)
         Me.dgvEMIRates.TabIndex = 9
         '
         'Button1
@@ -89,7 +89,7 @@ Partial Class EMIAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1322, 741)
+        Me.ClientSize = New System.Drawing.Size(1484, 812)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dgvEMIRates)
         Me.Controls.Add(Me.Label3)

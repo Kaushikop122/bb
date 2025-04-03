@@ -29,7 +29,7 @@ Partial Class AdminDashboard
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(146, 203)
+        Me.Button1.Location = New System.Drawing.Point(354, 391)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(264, 61)
         Me.Button1.TabIndex = 0
@@ -38,7 +38,7 @@ Partial Class AdminDashboard
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(604, 203)
+        Me.Button2.Location = New System.Drawing.Point(812, 391)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(264, 61)
         Me.Button2.TabIndex = 1
@@ -49,7 +49,7 @@ Partial Class AdminDashboard
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(385, 57)
+        Me.Label1.Location = New System.Drawing.Point(592, 243)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(256, 32)
         Me.Label1.TabIndex = 2
@@ -59,7 +59,7 @@ Partial Class AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1084, 566)
+        Me.ClientSize = New System.Drawing.Size(1475, 807)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Debttoincome
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class DebtToIncome
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,20 @@ Partial Class Debttoincome
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCalculate = New System.Windows.Forms.Button()
-        Me.txtIncome = New System.Windows.Forms.TextBox()
-        Me.txtDebt = New System.Windows.Forms.TextBox()
+        Me.txtMonthlyIncome = New System.Windows.Forms.TextBox()
+        Me.txtMonthlyDebt = New System.Windows.Forms.TextBox()
         Me.lblResult = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnExport = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
+        Me.txtDTIRatio = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label2
@@ -40,7 +41,7 @@ Partial Class Debttoincome
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Font = New System.Drawing.Font("Arial", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(82, 43)
+        Me.Label2.Location = New System.Drawing.Point(611, 67)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(352, 38)
         Me.Label2.TabIndex = 1
@@ -50,7 +51,7 @@ Partial Class Debttoincome
         '
         Me.btnBack.BackColor = System.Drawing.Color.IndianRed
         Me.btnBack.Font = New System.Drawing.Font("Sylfaen", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.Location = New System.Drawing.Point(677, 43)
+        Me.btnBack.Location = New System.Drawing.Point(42, 39)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 31)
         Me.btnBack.TabIndex = 9
@@ -61,7 +62,7 @@ Partial Class Debttoincome
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(75, 164)
+        Me.Label1.Location = New System.Drawing.Point(407, 183)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(244, 29)
         Me.Label1.TabIndex = 10
@@ -71,7 +72,7 @@ Partial Class Debttoincome
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(75, 275)
+        Me.Label3.Location = New System.Drawing.Point(407, 294)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(327, 29)
         Me.Label3.TabIndex = 11
@@ -79,40 +80,40 @@ Partial Class Debttoincome
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(555, 330)
+        Me.btnCalculate.Location = New System.Drawing.Point(887, 358)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(188, 46)
         Me.btnCalculate.TabIndex = 12
         Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = True
         '
-        'txtIncome
+        'txtMonthlyIncome
         '
-        Me.txtIncome.Location = New System.Drawing.Point(501, 164)
-        Me.txtIncome.Name = "txtIncome"
-        Me.txtIncome.Size = New System.Drawing.Size(251, 22)
-        Me.txtIncome.TabIndex = 13
+        Me.txtMonthlyIncome.Location = New System.Drawing.Point(833, 183)
+        Me.txtMonthlyIncome.Name = "txtMonthlyIncome"
+        Me.txtMonthlyIncome.Size = New System.Drawing.Size(251, 22)
+        Me.txtMonthlyIncome.TabIndex = 13
         '
-        'txtDebt
+        'txtMonthlyDebt
         '
-        Me.txtDebt.Location = New System.Drawing.Point(501, 281)
-        Me.txtDebt.Name = "txtDebt"
-        Me.txtDebt.Size = New System.Drawing.Size(251, 22)
-        Me.txtDebt.TabIndex = 14
+        Me.txtMonthlyDebt.Location = New System.Drawing.Point(833, 300)
+        Me.txtMonthlyDebt.Name = "txtMonthlyDebt"
+        Me.txtMonthlyDebt.Size = New System.Drawing.Size(251, 22)
+        Me.txtMonthlyDebt.TabIndex = 14
         '
         'lblResult
         '
         Me.lblResult.AutoSize = True
-        Me.lblResult.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResult.Location = New System.Drawing.Point(141, 414)
+        Me.lblResult.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblResult.Location = New System.Drawing.Point(455, 508)
         Me.lblResult.Name = "lblResult"
-        Me.lblResult.Size = New System.Drawing.Size(160, 32)
+        Me.lblResult.Size = New System.Drawing.Size(223, 42)
         Me.lblResult.TabIndex = 15
         Me.lblResult.Text = "DTI Ratio is"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(89, 503)
+        Me.btnSave.Location = New System.Drawing.Point(412, 657)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(150, 46)
         Me.btnSave.TabIndex = 17
@@ -121,7 +122,7 @@ Partial Class Debttoincome
         '
         'btnExport
         '
-        Me.btnExport.Location = New System.Drawing.Point(555, 503)
+        Me.btnExport.Location = New System.Drawing.Point(887, 657)
         Me.btnExport.Name = "btnExport"
         Me.btnExport.Size = New System.Drawing.Size(188, 46)
         Me.btnExport.TabIndex = 18
@@ -130,31 +131,39 @@ Partial Class Debttoincome
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(80, 330)
+        Me.btnReset.Location = New System.Drawing.Point(412, 358)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(150, 46)
         Me.btnReset.TabIndex = 22
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
-        'Debttoincome
+        'txtDTIRatio
+        '
+        Me.txtDTIRatio.Location = New System.Drawing.Point(740, 527)
+        Me.txtDTIRatio.Name = "txtDTIRatio"
+        Me.txtDTIRatio.Size = New System.Drawing.Size(270, 22)
+        Me.txtDTIRatio.TabIndex = 23
+        '
+        'DebtToIncome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1196, 730)
+        Me.ClientSize = New System.Drawing.Size(1483, 817)
+        Me.Controls.Add(Me.txtDTIRatio)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblResult)
-        Me.Controls.Add(Me.txtDebt)
-        Me.Controls.Add(Me.txtIncome)
+        Me.Controls.Add(Me.txtMonthlyDebt)
+        Me.Controls.Add(Me.txtMonthlyIncome)
         Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.Label2)
-        Me.Name = "Debttoincome"
+        Me.Name = "DebtToIncome"
         Me.Text = "debttoincome"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -165,10 +174,11 @@ Partial Class Debttoincome
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnCalculate As Button
-    Friend WithEvents txtIncome As TextBox
-    Friend WithEvents txtDebt As TextBox
+    Friend WithEvents txtMonthlyIncome As TextBox
+    Friend WithEvents txtMonthlyDebt As TextBox
     Friend WithEvents lblResult As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents btnExport As Button
     Friend WithEvents btnReset As Button
+    Friend WithEvents txtDTIRatio As TextBox
 End Class

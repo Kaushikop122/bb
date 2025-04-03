@@ -1,14 +1,8 @@
-﻿Public Class UserDashboard
-    Private userID As Integer
+﻿Public Class userdashboard
 
-    ' Constructor to receive userID
-    Public Sub New(Optional userID As Integer = 0)
-        InitializeComponent()
-        Me.userID = userID
-    End Sub
-
+    Public LoggedInUserID As Integer
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim emergencyForm As New EmergencyFundForm(Me.userID)
+        Dim emergencyForm As New EmergencyFund()
         emergencyForm.Show()
         Me.Hide()
     End Sub
@@ -19,11 +13,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim debtForm As New Debttoincome(Me.userID) ' ✅ Use the existing userID
-        debtForm.Show()
-        Me.Hide()
-    End Sub
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim savingsForm As New Savingplan
@@ -32,9 +22,18 @@
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim calculationsForm As New UserCalculationsForm
-        calculationsForm.Show()
+        Dim usercalculationsForm As New usercalculationsform
+        usercalculationsForm.Show()
         Me.Hide()
     End Sub
 
+    Private Sub userdashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.Text = "User ID: " & LoggedInUserID
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        DebtToIncome.Show()
+        Me.Hide()
+    End Sub
 End Class

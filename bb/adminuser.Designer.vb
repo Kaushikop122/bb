@@ -71,7 +71,7 @@ Partial Class adminuser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1477, 713)
+        Me.ClientSize = New System.Drawing.Size(1491, 804)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.dgvUsers)

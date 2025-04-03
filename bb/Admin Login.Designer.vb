@@ -35,7 +35,7 @@ Partial Class Adminform1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(556, 189)
+        Me.Label2.Location = New System.Drawing.Point(553, 298)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(124, 29)
         Me.Label2.TabIndex = 2
@@ -45,7 +45,7 @@ Partial Class Adminform1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(556, 291)
+        Me.Label3.Location = New System.Drawing.Point(553, 400)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(120, 29)
         Me.Label3.TabIndex = 3
@@ -54,7 +54,7 @@ Partial Class Adminform1
         'txtAdminUsername
         '
         Me.txtAdminUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdminUsername.Location = New System.Drawing.Point(714, 189)
+        Me.txtAdminUsername.Location = New System.Drawing.Point(711, 298)
         Me.txtAdminUsername.Name = "txtAdminUsername"
         Me.txtAdminUsername.Size = New System.Drawing.Size(189, 34)
         Me.txtAdminUsername.TabIndex = 4
@@ -62,26 +62,27 @@ Partial Class Adminform1
         'txtAdminPassword
         '
         Me.txtAdminPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdminPassword.Location = New System.Drawing.Point(714, 291)
+        Me.txtAdminPassword.Location = New System.Drawing.Point(711, 400)
         Me.txtAdminPassword.Name = "txtAdminPassword"
         Me.txtAdminPassword.Size = New System.Drawing.Size(189, 34)
         Me.txtAdminPassword.TabIndex = 5
         '
         'btnLogin
         '
+        Me.btnLogin.BackColor = System.Drawing.Color.Silver
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(777, 404)
+        Me.btnLogin.Location = New System.Drawing.Point(558, 513)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(125, 43)
+        Me.btnLogin.Size = New System.Drawing.Size(341, 43)
         Me.btnLogin.TabIndex = 6
         Me.btnLogin.Text = "Login"
-        Me.btnLogin.UseVisualStyleBackColor = True
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(569, 54)
+        Me.Label1.Location = New System.Drawing.Point(566, 163)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(333, 54)
         Me.Label1.TabIndex = 7
@@ -90,7 +91,7 @@ Partial Class Adminform1
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.IndianRed
-        Me.Button1.Location = New System.Drawing.Point(83, 54)
+        Me.Button1.Location = New System.Drawing.Point(43, 31)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 32)
         Me.Button1.TabIndex = 8
@@ -101,7 +102,7 @@ Partial Class Adminform1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1483, 594)
+        Me.ClientSize = New System.Drawing.Size(1479, 806)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnLogin)

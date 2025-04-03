@@ -1,83 +1,128 @@
-﻿Imports System.Data.SqlClient
+﻿' Emergency Fund Calculator - Budget Buddy
+Imports System.Data.SqlClient
 Imports System.IO
 
-Public Class EmergencyFundForm
-    Private connectionString As String = "Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True"
-    Dim userID As String = LoggedInUserID
+Public Class EmergencyFund
+    Dim conn As New SqlConnection("Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True")
+    Dim loggedInUserID As Integer ' Store the logged-in user's ID
 
-    ' Constructor to receive User ID
-    Public Sub New(userID As Integer)
-        InitializeComponent()
-        LoggedInUserID = userID
-    End Sub
-
-    ' Form Load Event
-    Private Sub EmergencyFundForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbMonths.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        cmbMonths.SelectedIndex = 2 ' Default: 3 months
-    End Sub
-
-    ' Calculate Emergency Fund
-    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
-        If txtExpenses.Text = "" Or cmbMonths.SelectedIndex = -1 Then
-            MessageBox.Show("Enter expenses and select months!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
+    Private Sub EmergencyFundCalculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Fetch the logged-in user ID
+        loggedInUserID = FetchUserID()
+        If loggedInUserID = -1 Then
+            MessageBox.Show("User not found. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
         End If
 
-        Dim expenses As Decimal = Convert.ToDecimal(txtExpenses.Text)
-        Dim months As Integer = Convert.ToInt32(cmbMonths.SelectedItem)
-        Dim emergencyFund As Decimal = expenses * months
-
-        txtEmergencyFund.Text = emergencyFund.ToString("0.00")
+        ' Populate months to save in the ComboBox
+        cmbMonthstosave.Items.Add("3")
+        cmbMonthstosave.Items.Add("6")
+        cmbMonthstosave.Items.Add("9")
+        cmbMonthstosave.Items.Add("12")
     End Sub
 
-    ' Save Data to Database
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If txtEmergencyFund.Text = "" Then
-            MessageBox.Show("Calculate the emergency fund first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    Private Function FetchUserID() As Integer
+        ' Fetch user ID from session or database
+        Dim userID As Integer = -1
+        Dim query As String = "SELECT UserID FROM Usertable WHERE Email = @Email AND Password = @Password"
+        Using cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@Email", LoggedInUserEmail)
+            cmd.Parameters.AddWithValue("@Password", LoggedInUserPassword)
+            conn.Open()
+            Dim result = cmd.ExecuteScalar()
+            If result IsNot Nothing Then userID = Convert.ToInt32(result)
+            conn.Close()
+        End Using
+        Return userID
+    End Function
+
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+        ' Validate inputs before calculating
+        If txtMonthlyExpenses.Text = "" OrElse cmbMonthstosave.SelectedIndex = -1 Then
+            MessageBox.Show("Please enter Monthly Expenses and select Months to Save.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Try
-            Using conn As New SqlConnection(connectionString)
+            Dim monthlyExpenses As Double = Convert.ToDouble(txtMonthlyExpenses.Text)
+            Dim monthsToSave As Integer = Convert.ToInt32(cmbMonthstosave.Text)
+            Dim totalEmergencyFund As Double = monthlyExpenses * monthsToSave
+            txtTotalFund.Text = totalEmergencyFund.ToString("F2")
+        Catch ex As Exception
+            MessageBox.Show("Invalid input. Please enter a valid number for Monthly Expenses.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        ' Validate inputs before saving
+        If txtMonthlyExpenses.Text = "" OrElse cmbMonthstosave.SelectedIndex = -1 OrElse txtTotalFund.Text = "" Then
+            MessageBox.Show("Please fill all fields before saving.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' Ensure user ID is valid before inserting data
+        If loggedInUserID = -1 Then
+            MessageBox.Show("User ID is invalid. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Try
+            ' Insert Emergency Fund calculation into database
+            Dim query As String = "INSERT INTO EmergencyFundTable (UserID, Expenses, Months, EmergencyFund) VALUES (@UserID, @Expenses, @Months, @EmergencyFund)"
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@UserID", loggedInUserID)
+                cmd.Parameters.AddWithValue("@Expenses", Convert.ToDouble(txtMonthlyExpenses.Text))
+                cmd.Parameters.AddWithValue("@Months", Convert.ToInt32(cmbMonthstosave.Text))
+                cmd.Parameters.AddWithValue("@EmergencyFund", Convert.ToDouble(txtTotalFund.Text))
                 conn.Open()
-                Dim query As String = "INSERT INTO EmergencyFundtable (UserID, Expenses, Months, EmergencyFund) VALUES (@UserID, @Expenses, @Months, @EmergencyFund)"
-                Dim cmd As New SqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@UserID", SessionData.LoggedInUserID)
-                cmd.Parameters.AddWithValue("@Expenses", Convert.ToDecimal(txtExpenses.Text))
-                cmd.Parameters.AddWithValue("@Months", Convert.ToInt32(cmbMonths.SelectedItem))
-                cmd.Parameters.AddWithValue("@EmergencyFund", Convert.ToDecimal(txtEmergencyFund.Text))
                 cmd.ExecuteNonQuery()
                 conn.Close()
-                MessageBox.Show("Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Emergency fund saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End Using
         Catch ex As Exception
-            MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while saving: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
-    ' Export Data to Text File
-    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
-        Dim saveFile As New SaveFileDialog()
-        saveFile.Filter = "Text Files (*.txt)|*.txt"
-        If saveFile.ShowDialog() = DialogResult.OK Then
-            File.WriteAllText(saveFile.FileName, $"User ID: {SessionData.LoggedInUserID}{vbCrLf}Expenses: {txtExpenses.Text}{vbCrLf}Months: {cmbMonths.SelectedItem}{vbCrLf}Emergency Fund: {txtEmergencyFund.Text}")
-            MessageBox.Show("Data Exported Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
-    ' Reset Fields
-    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        txtExpenses.Clear()
-        cmbMonths.SelectedIndex = -1
-        txtEmergencyFund.Clear()
-    End Sub
-
-    ' Close Form (Optional: Adjust Navigation as needed)
-    Private Sub btnback_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        Dim dashboard As New UserDashboard
-        dashboard.Show()
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        userdashboard.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        ' Reset all input fields
+        txtMonthlyExpenses.Clear()
+        cmbMonthstosave.SelectedIndex = -1
+        txtTotalFund.Clear()
+    End Sub
+
+    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+        ' Validate before exporting
+        If txtMonthlyExpenses.Text = "" OrElse cmbMonthstosave.SelectedIndex = -1 OrElse txtTotalFund.Text = "" Then
+            MessageBox.Show("Please fill all fields before exporting.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' Export calculation to a text file
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Text Files (*.txt)|*.txt"
+        saveFileDialog.Title = "Save Emergency Fund Calculation"
+
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            Try
+                Dim filePath As String = saveFileDialog.FileName
+                Using writer As New StreamWriter(filePath)
+                    writer.WriteLine("Emergency Fund Calculation")
+                    writer.WriteLine("--------------------------------------")
+                    writer.WriteLine("Monthly Expenses: " & txtMonthlyExpenses.Text)
+                    writer.WriteLine("Months to Save: " & cmbMonthstosave.Text)
+                    writer.WriteLine("Total Fund Required: " & txtTotalFund.Text)
+                    writer.WriteLine("--------------------------------------")
+                End Using
+                MessageBox.Show("Calculation exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error while exporting: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 End Class
