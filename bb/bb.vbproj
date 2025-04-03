@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1AF873D8-A66B-411A-8973-AAA903931F2C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>bb.userlogin</StartupObject>
+    <RootNamespace>bb</RootNamespace>
+    <AssemblyName>bb</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>bb.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bb.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminDashboard.Designer.vb">
+      <DependentUpon>AdminDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMIAdmin.Designer.vb">
+      <DependentUpon>EMIAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EMIAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Login.Designer.vb">
+      <DependentUpon>Admin Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.vb">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registerform.Designer.vb">
+      <DependentUpon>Registerform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registerform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Savingplan.Designer.vb">
+      <DependentUpon>Savingplan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Savingplan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Session.vb" />
+    <Compile Include="UserCalculationsForm.Designer.vb">
+      <DependentUpon>UserCalculationsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserCalculationsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userlogin.Designer.vb">
+      <DependentUpon>userlogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userlogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Dashboard.Designer.vb">
+      <DependentUpon>User Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMIcalculator.Designer.vb">
+      <DependentUpon>EMIcalculator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EMIcalculator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergencyfund.Designer.vb">
+      <DependentUpon>Emergencyfund.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Emergencyfund.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debttoincome.Designer.vb">
+      <DependentUpon>Debttoincome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Debttoincome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminuser.Designer.vb">
+      <DependentUpon>adminuser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminuser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMIAdmin.resx">
+      <DependentUpon>EMIAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Login.resx">
+      <DependentUpon>Admin Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registerform.resx">
+      <DependentUpon>Registerform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Savingplan.resx">
+      <DependentUpon>Savingplan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCalculationsForm.resx">
+      <DependentUpon>UserCalculationsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userlogin.resx">
+      <DependentUpon>userlogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Dashboard.resx">
+      <DependentUpon>User Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMIcalculator.resx">
+      <DependentUpon>EMIcalculator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergencyfund.resx">
+      <DependentUpon>Emergencyfund.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debttoincome.resx">
+      <DependentUpon>Debttoincome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminuser.resx">
+      <DependentUpon>adminuser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
