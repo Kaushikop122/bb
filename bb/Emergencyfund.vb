@@ -3,7 +3,7 @@ Imports System.IO
 
 Public Class EmergencyFundForm
     Private connectionString As String = "Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True"
-    Private LoggedInUserID As Integer
+    Dim userID As String = LoggedInUserID
 
     ' Constructor to receive User ID
     Public Sub New(userID As Integer)
@@ -38,23 +38,23 @@ Public Class EmergencyFundForm
             Return
         End If
 
-        Using conn As New SqlConnection(connectionString)
-            Dim query As String = "INSERT INTO EmergencyFundtable (UserID, Expenses, Months, EmergencyFund) VALUES (@UserID, @Expenses, @Months, @EmergencyFund)"
-            Dim cmd As New SqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@UserID", LoggedInUserID)
-            cmd.Parameters.AddWithValue("@Expenses", Convert.ToDecimal(txtExpenses.Text))
-            cmd.Parameters.AddWithValue("@Months", Convert.ToInt32(cmbMonths.SelectedItem))
-            cmd.Parameters.AddWithValue("@EmergencyFund", Convert.ToDecimal(txtEmergencyFund.Text))
-
-            Try
+        Try
+            Using conn As New SqlConnection(connectionString)
                 conn.Open()
+                Dim query As String = "INSERT INTO EmergencyFundtable (UserID, Expenses, Months, EmergencyFund) VALUES (@UserID, @Expenses, @Months, @EmergencyFund)"
+                Dim cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@UserID", SessionData.LoggedInUserID)
+                cmd.Parameters.AddWithValue("@Expenses", Convert.ToDecimal(txtExpenses.Text))
+                cmd.Parameters.AddWithValue("@Months", Convert.ToInt32(cmbMonths.SelectedItem))
+                cmd.Parameters.AddWithValue("@EmergencyFund", Convert.ToDecimal(txtEmergencyFund.Text))
                 cmd.ExecuteNonQuery()
                 conn.Close()
                 MessageBox.Show("Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Catch ex As SqlException
-                MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     ' Export Data to Text File
@@ -62,7 +62,7 @@ Public Class EmergencyFundForm
         Dim saveFile As New SaveFileDialog()
         saveFile.Filter = "Text Files (*.txt)|*.txt"
         If saveFile.ShowDialog() = DialogResult.OK Then
-            File.WriteAllText(saveFile.FileName, $"User ID: {LoggedInUserID}{vbCrLf}Expenses: {txtExpenses.Text}{vbCrLf}Months: {cmbMonths.SelectedItem}{vbCrLf}Emergency Fund: {txtEmergencyFund.Text}")
+            File.WriteAllText(saveFile.FileName, $"User ID: {SessionData.LoggedInUserID}{vbCrLf}Expenses: {txtExpenses.Text}{vbCrLf}Months: {cmbMonths.SelectedItem}{vbCrLf}Emergency Fund: {txtEmergencyFund.Text}")
             MessageBox.Show("Data Exported Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub

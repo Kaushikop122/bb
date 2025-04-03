@@ -1,15 +1,54 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class userlogin
-    Dim connection As New SqlConnection("Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True")
+    Dim connectionString As String = "Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True"
+
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        If txtEmail.Text = "" OrElse txtPassword.Text = "" Then
+            MessageBox.Show("Please enter Email and Password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Try
+            Using con As New SqlConnection(connectionString)
+                Dim query As String = "SELECT UserID FROM Usertable WHERE Email=@Email AND Password=@Password"
+                Dim cmd As New SqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
+
+                con.Open()
+                Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+                If reader.Read() Then
+                    Dim userID As String = reader("UserID").ToString()
+                    reader.Close()
+
+                    ' Store UserID in a session variable
+                    LoggedInUserID = userID
+
+                    MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Open the next form (Dashboard or Main Application)
+                    Dim dashboard As New UserDashboard()
+                    dashboard.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Invalid Email or Password. Try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error during login: " & ex.Message)
+        End Try
+    End Sub
 
     ' Event to fetch UserID when email is entered
     Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
         Try
-            Dim command As New SqlCommand("SELECT UserID FROM Usertable WHERE Email = @Email", connection)
+            Dim conn As New SqlConnection(connectionString)
+            Dim command As New SqlCommand("SELECT UserID FROM Usertable WHERE Email = @Email", conn)
             command.Parameters.AddWithValue("@Email", txtEmail.Text)
 
-            connection.Open()
+            conn.Open()
             Dim reader As SqlDataReader = command.ExecuteReader()
             cmbuserid.Items.Clear()
 
@@ -19,38 +58,8 @@ Public Class userlogin
             reader.Close()
         Catch ex As Exception
             MessageBox.Show("Error fetching UserID: " & ex.Message)
-        Finally
-            connection.Close()
         End Try
     End Sub
-
-    ' Event to verify login when user clicks Login button
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Try
-            Dim command As New SqlCommand("SELECT COUNT(*) FROM Usertable WHERE UserID = @UserID AND Password = @Password", connection)
-            command.Parameters.AddWithValue("@UserID", cmbuserid.Text)
-            command.Parameters.AddWithValue("@Password", txtPassword.Text)
-
-            connection.Open()
-            Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
-
-            If count > 0 Then
-                MessageBox.Show("Login Successful!")
-                ' Redirect to dashboard
-                Dim dashboard As New UserDashboard
-                dashboard.Show()
-                Me.Hide()
-
-            Else
-                MessageBox.Show("Invalid UserID or Password.")
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error during login: " & ex.Message)
-        Finally
-            connection.Close()
-        End Try
-    End Sub
-
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Registerform.Show()
         Me.Hide()
@@ -60,8 +69,7 @@ Public Class userlogin
         Adminform1.Show()
         Me.Hide()
     End Sub
-
     Private Sub userlogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        q
+
     End Sub
 End Class

@@ -3,7 +3,7 @@ Imports System.IO
 
 Public Class EMIcalculator
     Dim connectionString As String = "Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True"
-
+    Dim userID As String = LoggedInUserID
 
     Private Sub EMIcalculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbBank.Items.Add("State Bank of India")
