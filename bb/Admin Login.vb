@@ -4,7 +4,7 @@ Public Class Adminform1
     Dim con As New SqlConnection("Data Source=NITRO5\MSSQLSERVER01;Initial Catalog=BudgetBud;Integrated Security=True;TrustServerCertificate=True")
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-
+'merge test
     Private Sub btnAdminLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
             con.Open()
